@@ -56,3 +56,34 @@ https://www.youtube.com/watch?v=Io2ElO8ORSQ&list=PLDzXQPWT8wEDfRchprRQInF16RHyQG
 * Build a Complete Restaurant POS Desktop App with .Net MAUI + XAML + SQLite - .Net 8 by Abhay Prince
 https://www.youtube.com/watch?v=yU6wsIR37Gs
 
+## Cách build app:
+
+1. Mở Command Prompt hoặc Terminal.
+
+Điều hướng đến thư mục dự án:
+
+`cd D:\git\github\khuuxuanngoc\Learn_CSharp_Maui\LearnVisualStudio_Maui\LearnVisualStudio_Maui_Chart\MauiApp1_Chart`
+
+2. Làm sạch dự án:
+
+`dotnet clean`
+
+3. Build lại dự án ở chế độ Release:
+
+`dotnet build -c Release`
+
+4. Tạo gói phân phối:
+
+  * Đối với Android: `dotnet publish -c Release -f net9.0-android -o ./publish`
+
+  * Đối với iOS: `dotnet publish -c Release -f net9.0-ios -o ./publish`
+
+  * Đối với Mac Catalyst: `dotnet publish -c Release -f net9.0-maccatalyst -o ./publish`
+
+  * Đối với Windows: `dotnet publish -c Release -f net9.0-windows10.0.19041.0 -o ./publish`
+
+  ## Fix lỗi:
+
+  * Lỗi build release
+
+        - https://github.com/mono/SkiaSharp/issues/2444#issuecomment-1564090245
