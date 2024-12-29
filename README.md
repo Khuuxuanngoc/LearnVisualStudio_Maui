@@ -2,6 +2,9 @@
 
 # Video tham khảo
 
+* Visualize Your Data with Charts in .NET MAUI
+https://www.youtube.com/watch?v=yMG8oPIuMig
+
 * Start Your New .NET MAUI App with These Amazing Templates!
 https://www.youtube.com/watch?v=waq1ITSqA84
 Nên tham khảo để viết app cho Android,...

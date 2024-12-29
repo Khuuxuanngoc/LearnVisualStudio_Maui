@@ -12,4 +12,8 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <FlyoutItem Title="Serial Communication">
+        <ShellContent ContentTemplate="{DataTemplate local:SerialPage}" />
+    </FlyoutItem>
+
 </Shell>

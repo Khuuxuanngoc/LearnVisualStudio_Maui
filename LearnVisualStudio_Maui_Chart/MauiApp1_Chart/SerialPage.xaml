@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1_Chart.SerialPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Label Text="Available Ports:" />
+            <Picker x:Name="PortsPicker" Title="Select Port" />
+
+            <Button
+                x:Name="RefreshButton"
+                Text="Refresh COM Ports"
+                Clicked="OnRefreshClicked"
+                HorizontalOptions="Fill" />
+
+            <Label Text="Baud Rate:" />
+            <Entry x:Name="BaudRateEntry" Placeholder="Enter Baud Rate" Keyboard="Numeric" />
+
+            <BoxView x:Name="ConnectionStatusBox" HeightRequest="20" WidthRequest="20" Color="Red" />
+
+            <Button
+                x:Name="ConnectButton"
+                Text="Connect"
+                Clicked="OnConnectToggleClicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="ClearLogButton"
+                Text="Clear Log"
+                Clicked="OnClearLogClicked"
+                HorizontalOptions="Fill" />
+
+            <Label Text="Log Data:" />
+
+            <ScrollView x:Name="LogScrollView" HeightRequest="200">
+                <Label x:Name="LogLabel" LineBreakMode="WordWrap" />
+            </ScrollView>
+
+            <CheckBox x:Name="AutoScrollCheckBox" IsChecked="True" />
+
+            <Label Text="Send Data:" />
+            <Entry x:Name="SendDataEntry" Placeholder="Enter Data to Send" />
+
+            <Button
+                x:Name="SendDataButton"
+                Text="Send Data"
+                Clicked="OnSendDataClicked"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
