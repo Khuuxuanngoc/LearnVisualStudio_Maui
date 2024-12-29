@@ -31,6 +31,37 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+            
+            <!-- Bat dau code kxn -->
+            <Label Text="Value:" />
+            <Entry x:Name="ValueEntry" Placeholder="Enter value in Kg" Keyboard="Numeric" />
+
+            <Label Text="Time:" />
+            <Entry x:Name="TimeEntry" Placeholder="Enter time in seconds" Keyboard="Numeric" />
+
+            <Button
+                x:Name="AddDataButton"
+                Text="Add Data"
+                Clicked="OnAddDataClicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="ClearDataButton"
+                Text="Clear Data"
+                Clicked="OnClearDataClicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="SaveCSVButton"
+                Text="Save to CSV"
+                Clicked="OnSaveCSVClicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="ImportCSVButton"
+                Text="Import CSV"
+                Clicked="OnImportCSVClicked"
+                HorizontalOptions="Fill" />
 
             <micro:ChartView x:Name="chartView" HeightRequest="500" />
             <micro:ChartView x:Name="chartView1" HeightRequest="500" />

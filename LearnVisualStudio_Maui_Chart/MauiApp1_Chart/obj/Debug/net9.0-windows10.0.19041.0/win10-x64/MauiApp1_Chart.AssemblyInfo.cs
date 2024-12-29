@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MauiApp1_Chart")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+8551aecf5503411c7e9f737818229481c2212ac8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+7551daa9cf04bee55e97b2cf2bc8e9b1f23a45a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("MauiApp1_Chart")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MauiApp1_Chart")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

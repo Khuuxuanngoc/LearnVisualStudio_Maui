@@ -11,8 +11,8 @@
       "RelativeMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|d:\\git\\github\\khuuxuanngoc\\learn_csharp_maui\\learnvisualstudio_maui\\learnvisualstudio_maui_chart\\mauiapp1_chart\\datapoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|solutionrelative:datapoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|d:\\git\\github\\khuuxuanngoc\\learn_csharp_maui\\learnvisualstudio_maui\\learnvisualstudio_maui_chart\\mauiapp1_chart\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|solutionrelative:dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|d:\\git\\github\\khuuxuanngoc\\learn_csharp_maui\\learnvisualstudio_maui\\learnvisualstudio_maui_chart\\mauiapp1_chart\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -23,16 +23,16 @@
       "RelativeMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|solutionrelative:resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|d:\\git\\github\\khuuxuanngoc\\learn_csharp_maui\\learnvisualstudio_maui\\learnvisualstudio_maui_chart\\mauiapp1_chart\\datapoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|solutionrelative:datapoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|d:\\git\\github\\khuuxuanngoc\\learn_csharp_maui\\learnvisualstudio_maui\\learnvisualstudio_maui_chart\\mauiapp1_chart\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|solutionrelative:resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|d:\\git\\github\\khuuxuanngoc\\learn_csharp_maui\\learnvisualstudio_maui\\learnvisualstudio_maui_chart\\mauiapp1_chart\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|d:\\git\\github\\khuuxuanngoc\\learn_csharp_maui\\learnvisualstudio_maui\\learnvisualstudio_maui_chart\\mauiapp1_chart\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E084C1D-961C-428B-B4B4-63C503FF6A2E}|MauiApp1_Chart.csproj|solutionrelative:dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,50 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-28T15:00:19.526Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "MainPage.xaml.cs",
-              "ToolTip": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\MainPage.xaml.cs",
-              "RelativeToolTip": "MainPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:51:31.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\MainPage.xaml",
-              "RelativeDocumentMoniker": "MainPage.xaml",
-              "ToolTip": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\MainPage.xaml",
-              "RelativeToolTip": "MainPage.xaml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAjwCIAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-28T14:39:53.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Colors.xaml",
               "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\Resources\\Styles\\Colors.xaml",
               "RelativeDocumentMoniker": "Resources\\Styles\\Colors.xaml",
@@ -111,20 +72,72 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataService.cs",
+              "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\DataService.cs",
+              "RelativeDocumentMoniker": "DataService.cs",
+              "ToolTip": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\DataService.cs",
+              "RelativeToolTip": "DataService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAA1wDUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T14:28:06.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MainPage.xaml.cs",
+              "ToolTip": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\MainPage.xaml.cs",
+              "RelativeToolTip": "MainPage.xaml.cs",
+              "ViewState": "AgIAAAABAAAAAAAAAAAAwP4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T14:51:31.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MainPage.xaml",
+              "ToolTip": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\MainPage.xaml",
+              "RelativeToolTip": "MainPage.xaml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAD4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-28T14:39:53.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-28T15:00:19.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AppShell.xaml",
               "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\AppShell.xaml",
               "RelativeDocumentMoniker": "AppShell.xaml",
               "ToolTip": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\AppShell.xaml",
               "RelativeToolTip": "AppShell.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-12-28T15:00:22.305Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "DataPoint.cs",
               "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\DataPoint.cs",
               "RelativeDocumentMoniker": "DataPoint.cs",
@@ -132,21 +145,7 @@
               "RelativeToolTip": "DataPoint.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:36:35.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DataService.cs",
-              "DocumentMoniker": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\DataService.cs",
-              "RelativeDocumentMoniker": "DataService.cs",
-              "ToolTip": "D:\\git\\github\\khuuxuanngoc\\Learn_CSharp_Maui\\LearnVisualStudio_Maui\\LearnVisualStudio_Maui_Chart\\MauiApp1_Chart\\DataService.cs",
-              "RelativeToolTip": "DataService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:28:06.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T14:36:35.896Z"
             }
           ]
         }
