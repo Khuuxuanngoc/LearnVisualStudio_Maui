@@ -1,21 +1,19 @@
-﻿using System;
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace MauiApp1_Chart
 {
-    public partial class SerialPage : ContentPage
+    public partial class SerialChartPage : ContentPage
     {
         private ArduinoCommunicator _arduinoCommunicator;
         private FormattedString _logFormattedString;
-
         private StringBuilder _logBuilder = new StringBuilder();
         private Span _logSpan = new Span();
 
-        private DataQueue _dataQueue = new DataQueue();
-
-        public SerialPage()
+        public SerialChartPage()
         {
             InitializeComponent();
             _arduinoCommunicator = new ArduinoCommunicator();
@@ -30,10 +28,21 @@ namespace MauiApp1_Chart
 
         private void LoadAvailablePorts()
         {
-            PortsPicker.ItemsSource = _arduinoCommunicator.GetAvailablePorts();
+            var ports = _arduinoCommunicator.GetAvailablePorts();
+            if (ports.Length > 0)
+            {
+                PortsPicker_Cbbox.ItemsSource = ports;
+                PortsPicker_Cbbox.SelectedIndex = 0; // Chọn item đầu tiên
+                DisplayAlert("Scan COM", string.Join(", ", ports), "OK");
+            }
+            else
+            {
+                PortsPicker_Cbbox.ItemsSource = null;
+                DisplayAlert("Scan COM", "No COM ports found", "OK");
+            }
         }
 
-        private void OnRefreshClicked(object sender, EventArgs e)
+        private void OnScanPortBtnClicked(object sender, EventArgs e)
         {
             LoadAvailablePorts();
         }
@@ -42,14 +51,18 @@ namespace MauiApp1_Chart
         {
             if (ConnectButton.Text == "Connect")
             {
-                if (PortsPicker.SelectedItem != null && int.TryParse(BaudRateEntry.Text, out int baudRate))
+                if (PortsPicker_Cbbox.SelectedItem != null && int.TryParse(BaudRateEntry.Text, out int baudRate))
                 {
-                    string portName = PortsPicker.SelectedItem.ToString();
+                    string portName = PortsPicker_Cbbox.SelectedItem.ToString();
                     _arduinoCommunicator.SetupPort(portName, baudRate);
                     _arduinoCommunicator.Connect();
 
                     ConnectButton.Text = "Disconnect";
                     ConnectionStatusBox.Color = Colors.Green;
+                }
+                else
+                {
+                    DisplayAlert("Error", "Please select a port and enter a valid baud rate.", "OK");
                 }
             }
             else
@@ -63,13 +76,21 @@ namespace MauiApp1_Chart
         private void OnClearLogClicked(object sender, EventArgs e)
         {
             _logFormattedString.Spans.Clear();
+            _logBuilder.Clear();
         }
 
         private void OnSendDataClicked(object sender, EventArgs e)
         {
-            string data = SendDataEntry.Text;
-            _arduinoCommunicator.SendData(data);
-            LogData($"Sent: {data}", Colors.Red);
+            try
+            {
+                string data = SendDataEntry.Text;
+                _arduinoCommunicator.SendData(data);
+                LogData($"Sent: {data}", Colors.Red);
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", $"Failed to send data: {ex.Message}", "OK");
+            }
         }
 
         private void OnDataReceived(string data)
@@ -90,7 +111,6 @@ namespace MauiApp1_Chart
             });
         }
 
-
         private void OnDataToChart(string data)
         {
             // Biểu thức chính quy để tìm các số trong chuỗi
@@ -106,9 +126,8 @@ namespace MauiApp1_Chart
             }
         }
 
-        private void LogData(string message, Color color)
+        private async void LogData(string message, Color color)
         {
-            //_dataQueue.EnqueueDataFromString(message);
             OnDataToChart(message);
 
             // Giới hạn số lượng dòng log
@@ -131,8 +150,21 @@ namespace MauiApp1_Chart
             if (AutoScrollCheckBox.IsChecked)
             {
                 // Ensure that ScrollView scrolls to the bottom
-                LogScrollView.ScrollToAsync(0, LogLabel.Height, false);
+                await LogScrollView.ScrollToAsync(0, LogLabel.Height, false);
             }
+        }
+
+        private void OnTestButtonClicked(object sender, EventArgs e)
+        {
+            TestPortsPicker();
+        }
+
+        private void TestPortsPicker()
+        {
+            var testPorts = new List<string> { "COM1", "COM2", "COM3" };
+            PortsPicker_Cbbox.ItemsSource = testPorts;
+            PortsPicker_Cbbox.SelectedIndex = 0; // Chọn item đầu tiên
+            DisplayAlert("Test COM Ports", string.Join(", ", testPorts), "OK");
         }
     }
 }

@@ -16,4 +16,8 @@
         <ShellContent ContentTemplate="{DataTemplate local:SerialPage}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Serial Chart">
+        <ShellContent ContentTemplate="{DataTemplate local:SerialChartPage}" />
+    </FlyoutItem>
+
 </Shell>

@@ -11,10 +11,15 @@ public class ArduinoCommunicator
     public event Action<string> DataReceived;
     public event Action ConnectionLost;
 
+    //public string[] GetAvailablePorts()
+    //{
+    //    return SerialPort.GetPortNames();
+    //}
     public string[] GetAvailablePorts()
     {
-        return SerialPort.GetPortNames();
+        return System.IO.Ports.SerialPort.GetPortNames();
     }
+
 
     public void SetupPort(string portName, int baudRate)
     {

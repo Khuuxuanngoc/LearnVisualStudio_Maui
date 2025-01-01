@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="MauiApp1_Chart.SerialChartPage">
+
+    <Grid>
+        <!-- Cột bên trái -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Nội dung bên trái giống SerialPage -->
+        <ScrollView Grid.Column="0">
+            <VerticalStackLayout Padding="30,0" Spacing="25">
+                <!-- Các thành phần giống SerialPage -->
+                <Frame Padding="10" CornerRadius="10" BorderColor="LightGray">
+                    <VerticalStackLayout Spacing="20">
+                        <Label Text="Select Serial Port" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
+
+                        <Grid ColumnDefinitions="*, 2*" ColumnSpacing="10">
+                            <!-- Chọn COM -->
+                            <Button
+                                x:Name="ScanPortBtn"
+                                Text="Scan Port"
+                                Clicked="OnScanPortBtnClicked"
+                                HorizontalOptions="Fill"
+                                BackgroundColor="#6200EA"
+                                TextColor="White"
+                                Grid.Column="0" />
+
+                            <Picker x:Name="PortsPicker_Cbbox"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"
+                                    BackgroundColor="White"
+                                    TextColor="Black"
+                                    Grid.Column="1" />
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*, 2*" ColumnSpacing="10">
+                            <!-- Nhập Baud Rate -->
+                            <Label Text="Baud Rate:"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center"
+                                   FontAttributes="Bold"
+                                   Grid.Column="0"/>
+
+                            <Entry x:Name="BaudRateEntry"
+                                   Placeholder="Enter Baud Rate"
+                                   Keyboard="Numeric"
+                                   Text="9600"
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="Center"
+                                   BackgroundColor="White"
+                                   TextColor="Black"
+                                   Grid.Column="1" />
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*, *, auto" ColumnSpacing="10">
+                            <!-- Kết nối, Xóa log và Trạng thái kết nối -->
+                            <Button
+                                x:Name="ConnectButton"
+                                Text="Connect"
+                                Clicked="OnConnectToggleClicked"
+                                HorizontalOptions="Fill"
+                                BackgroundColor="#6200EA"
+                                TextColor="White"
+                                Grid.Column="0" />
+
+                            <Button
+                                x:Name="ClearLogButton"
+                                Text="Clear Log"
+                                Clicked="OnClearLogClicked"
+                                HorizontalOptions="Fill"
+                                BackgroundColor="#6200EA"
+                                TextColor="White"
+                                Grid.Column="1" />
+
+                            <BoxView x:Name="ConnectionStatusBox"
+                                     HeightRequest="20"
+                                     WidthRequest="20"
+                                     Color="Red"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     Grid.Column="2" />
+                        </Grid>
+
+                        <Label Text="Log Data:" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
+                        <ScrollView x:Name="LogScrollView" HeightRequest="200">
+                            <Label x:Name="LogLabel" LineBreakMode="WordWrap" />
+                        </ScrollView>
+
+                        <HorizontalStackLayout>
+                            <CheckBox x:Name="AutoScrollCheckBox" IsChecked="True" />
+                            <Label Text="Auto Scroll" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+
+                        <Label Text="Send Data:" />
+                        <Entry x:Name="SendDataEntry" Placeholder="Enter Data to Send" />
+
+                        <Button
+                            x:Name="SendDataButton"
+                            Text="Send Data"
+                            Clicked="OnSendDataClicked"
+                            HorizontalOptions="Fill" />
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Nút thử nghiệm để kiểm tra PortsPicker_Cbbox -->
+                <Button
+                    x:Name="TestButton"
+                    Text="Test PortsPicker"
+                    Clicked="OnTestButtonClicked"
+                    HorizontalOptions="Center"
+                    BackgroundColor="#6200EA"
+                    TextColor="White" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Nội dung bên phải -->
+        <ScrollView Grid.Column="1">
+            <VerticalStackLayout Padding="30,0" Spacing="25">
+                <!-- Biểu đồ và log dữ liệu -->
+                <Label Text="Data Chart:" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
+                <microcharts:ChartView x:Name="ChartView" HeightRequest="200" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

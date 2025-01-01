@@ -1,6 +1,8 @@
 ﻿//using Foundation;
 using Microcharts;
+using Microcharts.Maui;
 using SkiaSharp;
+using System.Timers;
 
 // https://www.youtube.com/watch?v=yMG8oPIuMig Visualize Your Data with Charts in .NET MAUI
 // 
@@ -63,11 +65,30 @@ namespace MauiApp1_Chart
 
             //}
         };
+
+        private ChartPlotter _chartPlotter;
+
+        //private Timer _updateTimer; // lỗi vì chart cũng có Timer
+        private System.Timers.Timer _updateTimer; // Sử dụng đầy đủ không gian tên
+
+        private bool _hasNewData;
+
         public MainPage()
         {
             InitializeComponent();
 
+            SharedDataService.DataAdded += OnDataAdded;
+
+            _chartPlotter = new ChartPlotter();
+
             var dataPointsFromDataService = DataService.GetSampleData();
+
+            _hasNewData = false;
+
+            // Thiết lập Timer để cập nhật biểu đồ mỗi giây
+            _updateTimer = new System.Timers.Timer(1000); // 1000ms = 1 giây
+            _updateTimer.Elapsed += OnUpdateTimerElapsed;
+            _updateTimer.Start();
 
             foreach (var point in dataPointsFromDataService)
             {
@@ -101,6 +122,42 @@ namespace MauiApp1_Chart
                 Entries = entries
             };
 
+        }
+
+        private void OnDataAdded(string text, double number)
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                //var dataQueue = SharedDataService.GetDataQueue();
+                //_chartPlotter.UpdateChart(dataQueue.Select(d => (d.number, d.number)));
+                //chartView1.Chart = _chartPlotter.GetChart();
+
+                ////DataService.AddData(new DataPoint { Value = value, Time = time });
+                ////UpdateChart();
+                _hasNewData = true;
+            });
+        }
+
+        private void OnUpdateTimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            if (_hasNewData == true)
+            {
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    var dataQueue = SharedDataService.GetDataQueue();
+                    _chartPlotter.UpdateChart(dataQueue.Select(d => (d.number, d.number)));
+                    chartView1.Chart = _chartPlotter.GetChart();
+                    _hasNewData = false;
+                });
+            }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            SharedDataService.DataAdded -= OnDataAdded;
+            _updateTimer.Stop();
+            _updateTimer.Dispose();
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
