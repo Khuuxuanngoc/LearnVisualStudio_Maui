@@ -1,9 +1,15 @@
 # LearnVisualStudio_Maui
 
+* Vẽ đồ thị với LiveChart2 (tham khảo, chuẩn bị học)
+https://livecharts.dev/docs/Maui/2.0.0-rc4/CartesianChart.Cartesian%20chart%20control
+
 # Video tham khảo
 
 * Visualize Your Data with Charts in .NET MAUI
 https://www.youtube.com/watch?v=yMG8oPIuMig
+
+* Adding Charts to Your .NET MAUI app with DevExpress Controls (4 cell phone)
+https://www.youtube.com/watch?v=uvcMy2WP0_M&t=436s
 
 * Start Your New .NET MAUI App with These Amazing Templates!
 https://www.youtube.com/watch?v=waq1ITSqA84

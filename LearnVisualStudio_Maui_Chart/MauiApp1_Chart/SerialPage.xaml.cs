@@ -15,6 +15,8 @@ namespace MauiApp1_Chart
 
         private DataQueue _dataQueue = new DataQueue();
 
+        private int _dataCount = 0;
+
         public SerialPage()
         {
             InitializeComponent();
@@ -76,7 +78,8 @@ namespace MauiApp1_Chart
         {
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                LogData($"Received: {data}", Colors.Green);
+                LogData($"Received {_dataCount}: {data}", Colors.Green);
+                _dataCount++;
             });
         }
 

@@ -200,11 +200,6 @@ namespace MauiApp1_Chart
                 }
             }
 
-            //chartView.Chart = new BarChart
-            //{
-            //    Entries = entries
-            //};
-
             chartView1.Chart = new LineChart
             {
                 Entries = entries
@@ -227,22 +222,6 @@ namespace MauiApp1_Chart
             DataService.ClearData();
             UpdateChart();
         }
-
-        //private async void OnSaveCSVClicked(object sender, EventArgs e)
-        //{
-        //    string filePath = Path.Combine(FileSystem.CacheDirectory, "data.csv");
-
-        //    using (var writer = new StreamWriter(filePath))
-        //    {
-        //        writer.WriteLine("Value,Time");
-        //        foreach (var point in DataService.GetListData())
-        //        {
-        //            writer.WriteLine($"{point.Value},{point.Time}");
-        //        }
-        //    }
-
-        //    await DisplayAlert("Success", $"Data saved to {filePath}", "OK");
-        //}
 
         private async void OnSaveCSVClicked(object sender, EventArgs e)
         {
@@ -268,38 +247,6 @@ namespace MauiApp1_Chart
             await DisplayAlert("Success", $"Data saved to {filePath}", "OK");
         }
 
-        //private async void OnImportCSVClicked(object sender, EventArgs e)
-        //{
-        //    var result = await FilePicker.PickAsync(new PickOptions
-        //    {
-        //        PickerTitle = "Please select a CSV file",
-        //        FileTypes = FilePickerFileType.Custom,
-        //        FileTypeFilter = new List<string> { ".csv" }
-        //    });
-
-        //    if (result != null)
-        //    {
-        //        using (var reader = new StreamReader(result.FullPath))
-        //        {
-        //            var header = reader.ReadLine(); // Read header
-        //            string line;
-        //            var dataPoints = new List<DataPoint>();
-
-        //            while ((line = reader.ReadLine()) != null)
-        //            {
-        //                var values = line.Split(',');
-
-        //                if (values.Length == 2 && double.TryParse(values[0], out double value) && double.TryParse(values[1], out double time))
-        //                {
-        //                    dataPoints.Add(new DataPoint { Value = value, Time = time });
-        //                }
-        //            }
-
-        //            DataService.SetData(dataPoints); // Clear and set new data
-        //            UpdateChart();
-        //        }
-        //    }
-        //}
 
         private async void OnImportCSVClicked(object sender, EventArgs e)
         {
