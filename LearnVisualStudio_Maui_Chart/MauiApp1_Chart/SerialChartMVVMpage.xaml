@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             xmlns:local="clr-namespace:MauiApp1_Chart.ViewModels"
+             xmlns:lc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+             x:Class="MauiApp1_Chart.SerialChartMVVMpage">
+
+    <ContentPage.BindingContext>
+        <local:SerialChartViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <!-- Cột bên trái -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Nội dung bên trái -->
+        <ScrollView Grid.Column="0">
+            <VerticalStackLayout Padding="30,0" Spacing="25">
+                <Frame Padding="10" CornerRadius="10" BorderColor="LightGray">
+                    <VerticalStackLayout Spacing="20">
+                        <Label Text="Select Serial Port" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
+
+                        <Grid ColumnDefinitions="*, 2*" ColumnSpacing="10">
+                            <Button
+                                x:Name="ScanPortBtn"
+                                Text="Scan Port"
+                                Command="{Binding ScanPortCommand}"
+                                HorizontalOptions="Fill"
+                                BackgroundColor="#6200EA"
+                                TextColor="White"
+                                Grid.Column="0" />
+
+                            <Picker
+                                x:Name="PortsPicker"
+                                ItemsSource="{Binding AvailablePorts}"
+                                SelectedItem="{Binding SelectedPort}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                BackgroundColor="White"
+                                TextColor="Black"
+                                Grid.Column="1" />
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*, 2*" ColumnSpacing="10">
+                            <Label Text="Baud Rate:"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center"
+                                   FontAttributes="Bold"
+                                   Grid.Column="0"/>
+
+                            <Entry
+                                Text="{Binding BaudRate}"
+                                Placeholder="Enter Baud Rate"
+                                Keyboard="Numeric"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                BackgroundColor="White"
+                                TextColor="Black"
+                                Grid.Column="1" />
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*, *, auto" ColumnSpacing="10">
+                            <Button
+                                x:Name="ConnectButton"
+                                Text="{Binding ConnectButtonText}"
+                                Command="{Binding ConnectToggleCommand}"
+                                HorizontalOptions="Fill"
+                                BackgroundColor="#6200EA"
+                                TextColor="White"
+                                Grid.Column="0" />
+
+                            <Button
+                                x:Name="ClearLogButton"
+                                Text="Clear Log"
+                                Command="{Binding ClearLogCommand}"
+                                HorizontalOptions="Fill"
+                                BackgroundColor="Gray"
+                                TextColor="White"
+                                Grid.Column="1" />
+
+                            <BoxView
+                                x:Name="ConnectionStatusBox"
+                                HeightRequest="20"
+                                WidthRequest="20"
+                                Color="{Binding ConnectionStatusColor}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Grid.Column="2" />
+                        </Grid>
+
+                        <Label Text="Log Data:" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
+                        <ScrollView x:Name="LogScrollView" HeightRequest="200">
+                            <Label x:Name="LogLabel" Text="{Binding LogData}" LineBreakMode="WordWrap" />
+                        </ScrollView>
+
+                        <HorizontalStackLayout>
+                            <CheckBox x:Name="AutoScrollCheckBox" IsChecked="{Binding AutoScroll}" />
+                            <Label Text="Auto Scroll" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+
+                        <Label Text="Send Data:" />
+                        <Entry x:Name="SendDataEntry" Text="{Binding SendDataText}" Placeholder="Enter Data to Send" />
+
+                        <Button
+                            x:Name="SendDataButton"
+                            Text="Send Data"
+                            Command="{Binding SendDataCommand}"
+                            HorizontalOptions="Fill" />
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Nội dung bên phải -->
+        <ScrollView Grid.Column="1">
+            <VerticalStackLayout Padding="30,0" Spacing="25">
+                <Label Text="Data Chart:" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
+                <!-- <micro:ChartView x:Name="ChartView" Chart="{Binding Chart}" HeightRequest="200" /> -->
+
+                <!-- Loại bỏ các biểu đồ khác nếu không cần -->
+                <!-- <Label Text="Chart 1" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
+                <micro:ChartView x:Name="chartView1" Chart="{Binding Chart1}" HeightRequest="500" />
+
+                <Label Text="Chart 2" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
+                <micro:ChartView x:Name="chartView2" Chart="{Binding Chart2}" HeightRequest="500" /> -->
+
+                <lc:CartesianChart Grid.Row="1"
+                    Series="{Binding Series}"
+                    XAxes="{Binding XAxes}"
+                    YAxes="{Binding YAxes}" />
+
+                <Label Text="Value:" />
+                <Entry x:Name="ValueEntry" Text="{Binding Value}" Placeholder="Enter value in Kg" Keyboard="Numeric" />
+
+                <Label Text="Time:" />
+                <Entry x:Name="TimeEntry" Text="{Binding Time}" Placeholder="Enter time in seconds" Keyboard="Numeric" />
+
+                <Button
+                    x:Name="AddDataButton"
+                    Text="Add Data"
+                    Command="{Binding AddDataCommand}"
+                    HorizontalOptions="Fill" />
+
+                <Button
+                    x:Name="ClearDataButton"
+                    Text="Clear Data"
+                    Command="{Binding ClearDataCommand}"
+                    HorizontalOptions="Fill" />
+
+                <Button
+                    x:Name="SaveCSVButton"
+                    Text="Save to CSV"
+                    Command="{Binding SaveCSVCommand}"
+                    HorizontalOptions="Fill" />
+
+                <Button
+                    x:Name="ImportCSVButton"
+                    Text="Import CSV"
+                    Command="{Binding ImportCSVCommand}"
+                    HorizontalOptions="Fill" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

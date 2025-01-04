@@ -1,0 +1,16 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:liveCharts="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+             xmlns:viewModels="clr-namespace:MauiApp1_Chart.ViewModels"
+             x:Class="MauiApp1_Chart.MultiLiveChartsPage"
+             mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <viewModels:MultiLiveChartsViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <!-- Biểu đồ sẽ được thêm vào StackLayout này từ code-behind -->
+    </StackLayout>
+</ContentPage>

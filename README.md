@@ -2,6 +2,7 @@
 
 * Vẽ đồ thị với LiveChart2 (tham khảo, chuẩn bị học)
 https://livecharts.dev/docs/Maui/2.0.0-rc4/CartesianChart.Cartesian%20chart%20control
+- cài Nuget: `LiveChartsCore.SkiaSharpView` (`CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView`) đang test
 
 # Video tham khảo
 

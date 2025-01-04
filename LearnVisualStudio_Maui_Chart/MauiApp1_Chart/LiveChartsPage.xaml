@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+             xmlns:local="clr-namespace:MauiApp1_Chart.ViewModels"
+             x:Class="MauiApp1_Chart.LiveChartsPage">
+
+    <ContentPage.BindingContext>
+        <local:LiveChartsViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Padding="10" Spacing="10">
+            <Entry Placeholder="Enter new value"
+                   Text="{Binding NewValue}"
+                   Keyboard="Numeric" />
+            <Button Text="Add Data" Command="{Binding AddDataCommand}" />
+            <Button Text="Clear Data" Command="{Binding ClearDataCommand}" />
+        </VerticalStackLayout>
+
+        <lc:CartesianChart Grid.Row="1"
+                           Series="{Binding Series}"
+                           XAxes="{Binding XAxes}"
+                           YAxes="{Binding YAxes}"
+                           ZoomMode="X"
+                           ZoomingSpeed="800" />
+    </Grid>
+</ContentPage>

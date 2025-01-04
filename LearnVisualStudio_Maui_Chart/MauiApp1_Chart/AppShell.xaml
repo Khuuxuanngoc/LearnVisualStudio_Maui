@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp1_Chart"
+    xmlns:local_kxn="clr-namespace:MauiApp1_Chart.kxnPage"
     Shell.FlyoutBehavior="Flyout"
     Title="MauiApp1_Chart">
 
@@ -19,5 +20,23 @@
     <FlyoutItem Title="Serial Chart">
         <ShellContent ContentTemplate="{DataTemplate local:SerialChartPage}" />
     </FlyoutItem>
+
+    <FlyoutItem Title="Serial Chart MVVM Page">
+        <ShellContent ContentTemplate="{DataTemplate local:SerialChartMVVMpage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Live Chart MVVM Page">
+        <ShellContent ContentTemplate="{DataTemplate local:LiveChartsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Multi Live Chart MVVM Page">
+        <ShellContent ContentTemplate="{DataTemplate local:MultiLiveChartsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Multi Live Chart MVVM NoXaml Page">
+        <ShellContent ContentTemplate="{DataTemplate local_kxn:MultiLiveChartsPageNoXaml}" />
+    </FlyoutItem>
+
+    
 
 </Shell>
